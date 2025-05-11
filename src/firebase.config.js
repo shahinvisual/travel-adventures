@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCDDlszuiTyrQi86LyjihQvwdfuusFRaZc",
-  authDomain: "travel-adventure-4818a.firebaseapp.com",
-  projectId: "travel-adventure-4818a",
-  storageBucket: "travel-adventure-4818a.firebasestorage.app",
-  messagingSenderId: "858699736075",
-  appId: "1:858699736075:web:a716a3a9f2b4a1ff68530e"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 const app = initializeApp(firebaseConfig);

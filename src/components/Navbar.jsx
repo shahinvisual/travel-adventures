@@ -27,7 +27,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn">Login</button>
+                <button  onClick={() => document.getElementById('my_modal_2').showModal()} className="btn">Login</button>
             </div>
             <LoginModal/>
         </div>
