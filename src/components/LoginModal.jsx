@@ -1,8 +1,74 @@
-import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../Auth/AuthProvider";
+import toast from "react-hot-toast";
 
 const LoginModal = () => {
+    const { signInWithGoogle, createUser, signInWithPassword } = useContext(AuthContext);
     const [active, setActive] = useState(true);
+    const [error, setError] = useState("")
+    
+    {/* --------------SignIn With Google-------------- */ }
+    const handleGoogleLogin = () => {
+        setError("")
+        signInWithGoogle()
+            .then(res => {
+                console.log(res.user);
+                toast.success('successfully login')
+            }).catch(error => {
+                console.log(error.message);
+                setError(error.message)
+            })
+    };
+
+
+    {/* --------------handleLogin-------------- */ }
+    const handleLogin = (e) => {
+        setError("")
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        signInWithPassword(email, password)
+            .then(res => {
+                console.log(res.user);
+                toast.success('Successfully Login');
+                e.target.reset();
+            }).catch(error => {
+                console.log(error.message);
+                setError(error.message)
+            })
+
+    }
+
+    {/* --------------CreateUser with Email & Password-------------- */ }
+    const handleRegister = (e) => {
+        setError("")
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const confirmPassword = e.target.confirm_password.value;
+
+        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(password)){
+            return setError("Password must be 8+ characters with uppercase, lowercase, number & symbol.")
+        }
+        if (password !== confirmPassword) {
+            return setError('password do not match!')
+        }
+
+        createUser(email, password)
+            .then(res => {
+                console.log(res.user);
+                toast.success('(_successfully Create Account');
+                e.target.reset();
+            }).catch(error => {
+                console.log(error.message);
+                setError(error.message)
+            })
+    }
     return (
         <>
             <dialog id="my_modal_2" className="modal">
@@ -17,27 +83,47 @@ const LoginModal = () => {
                                 {
                                     active ?
                                         <>
-                                            <form className="fieldset">
+                                            <form onSubmit={handleLogin} className="fieldset">
+                                                {/* --------------Email-------------- */}
                                                 <label className="label">Email</label>
-                                                <input type="email" className="input" placeholder="Email" />
+                                                <input type="email" name="email" className="input" placeholder="Email" />
+                                                {/* --------------Password-------------- */}
                                                 <label className="label">Password</label>
-                                                <input type="password" className="input" placeholder="Password" />
+                                                <input type="password" name="password" className="input" placeholder="Password" />
                                                 <div><a className="link link-hover">Forgot password?</a></div>
                                                 <button className="btn btn-neutral mt-4">Login</button>
                                             </form>
-                                            <NavLink onClick={() => setActive(false)} className="text-center p-3">Don't have an account? <span className=" text-[#3D90D7] font-semibold">Register</span></NavLink>
+                                            <NavLink onClick={() => setActive(false)} className="text-center pt-1">Don't have an account? <span className=" text-[#3D90D7] font-semibold">Register</span></NavLink>
+                                            {/* --------------Divider-------------- */}
+                                            <div className="flex w-full flex-col">
+                                                <div className="divider">OR</div>
+                                                <button onClick={handleGoogleLogin} className="text-base font-semibold bg-base-300 text-center rounded-3xl p-2 flex justify-center items-center gap-4"> <span><FcGoogle size={21} /></span>Sign up with Google</button>
+                                            </div>
+                                            <div className="text-center pt-3 text-red-600 text-xl">{error}</div>
                                         </>
                                         :
                                         <>
-                                            <form className="fieldset">
-                                                <label className="label"></label>
-                                                <input type="email" className="input" placeholder="Email" />
+                                            <form onSubmit={handleRegister} className="fieldset">
+                                                {/* --------------Name-------------- */}
+                                                <label className="label">Name</label>
+                                                <input required type="text" name="name" className="input" placeholder="Name" />
+                                                {/* --------------Photo-URL-------------- */}
+                                                <label className="label">Photo-URL</label>
+                                                <input required type="text" name="photo" className="input" placeholder="Photo-URL" />
+                                                {/* --------------Email-------------- */}
+                                                <label className="label">Email</label>
+                                                <input required type="email" name="email" className="input" placeholder="Email" />
+                                                {/* --------------Password-------------- */}
                                                 <label className="label">Password</label>
-                                                <input type="password" className="input" placeholder="Password" />
+                                                <input required type="text" name="password" className="input" placeholder="Password" />
+                                                {/* --------------Confirm_Password-------------- */}
+                                                <label className="label">Confirm_Password</label>
+                                                <input required type="text" name="confirm_password" className="input" placeholder="Confirm_Password" />
                                                 <div><a className="link link-hover">Forgot password?</a></div>
                                                 <button className="btn btn-neutral mt-4">Register</button>
                                             </form>
-                                            <NavLink onClick={() => setActive(true)} className="text-center p-3">Already have an account? <span className=" text-[#3D90D7] font-semibold">Login</span></NavLink>
+                                            <NavLink onClick={() => setActive(true)} className="text-center pt-3">Already have an account? <span className=" text-[#3D90D7] font-semibold">Login</span></NavLink>
+                                            <div className="text-center pt-3 text-red-600 text-xl">{error}</div>
                                         </>
                                 }
                             </div>
@@ -53,3 +139,4 @@ const LoginModal = () => {
 };
 
 export default LoginModal;
+
