@@ -4,161 +4,95 @@
     "adventureTitle": "Rainforest Canopy Walk",
     "image": "https://i.ibb.co.com/rGKTwHk5/free-photo-of-people-on-footpath-through-forest.jpg",
     "categoryName": "Jungle Exploration",
-    "shortDescription": "Walk high above the rainforest floor and experience the treetops like never before.",
+    "longDescription": "Experience the magic of the rainforest from a bird’s-eye view as you walk high above the forest floor on suspended canopy bridges. This guided tour provides breathtaking perspectives of the lush jungle and its wildlife, including tropical birds, monkeys, and rare plants. With safety equipment provided and a knowledgeable guide leading the way, it's a perfect adventure for nature lovers seeking a unique and eco-conscious perspective of the rainforest.",
     "adventureCost": 75,
     "bookingAvailability": true,
     "location": "Costa Rica",
     "duration": "3 hours",
     "adventureLevel": "Moderate",
-    "includedItems": [
-      "Guide",
-      "Safety Harness",
-      "Water Bottle"
-    ],
-    "ecoFriendlyFeatures": [
-      "No plastic policy",
-      "Local guides",
-      "Carbon neutral transport"
-    ],
+    "includedItems": ["Guide", "Safety Harness", "Water Bottle"],
+    "ecoFriendlyFeatures": ["No plastic policy", "Local guides", "Carbon neutral transport"],
     "maxGroupSize": 10,
-    "specialInstructions": [
-      "Wear closed-toe shoes",
-      "Bring insect repellent",
-      "Arrive 15 minutes early"
-    ]
+    "specialInstructions": ["Wear closed-toe shoes", "Bring insect repellent", "Arrive 15 minutes early"]
   },
   {
     "id": 2,
     "adventureTitle": "Mangrove Kayak Safari",
     "image": "https://i.ibb.co.com/LX9DgwQF/pexels-photo-9354923.jpg",
     "categoryName": "Water Adventure",
-    "shortDescription": "Explore serene mangrove forests by kayak while spotting wildlife.",
+    "longDescription": "Paddle through tranquil mangrove tunnels and open estuaries on this peaceful kayak safari. This eco-adventure offers intimate encounters with wildlife such as birds, crabs, and even monkeys, all while promoting environmental awareness. With no motorized boats allowed, the serene environment allows for quiet exploration and nature photography. Ideal for beginners and families, this adventure blends relaxation, discovery, and environmental respect.",
     "adventureCost": 55,
     "bookingAvailability": true,
     "location": "Thailand",
     "duration": "2.5 hours",
     "adventureLevel": "Easy",
-    "includedItems": [
-      "Kayak",
-      "Life Jacket",
-      "Dry Bag"
-    ],
-    "ecoFriendlyFeatures": [
-      "No engine use",
-      "Eco-educational briefing",
-      "Wildlife protection"
-    ],
+    "includedItems": ["Kayak", "Life Jacket", "Dry Bag"],
+    "ecoFriendlyFeatures": ["No engine use", "Eco-educational briefing", "Wildlife protection"],
     "maxGroupSize": 8,
-    "specialInstructions": [
-      "Wear quick-dry clothing",
-      "Use reef-safe sunscreen"
-    ]
+    "specialInstructions": ["Wear quick-dry clothing", "Use reef-safe sunscreen"]
   },
   {
     "id": 3,
     "adventureTitle": "Desert Stargazing Trek",
     "image": "https://i.ibb.co.com/zHjN56Kj/free-photo-of-stargazing-campers-under-the-milky-way.jpg",
     "categoryName": "Night Adventure",
-    "shortDescription": "Hike into the desert and experience the cosmos far from city lights.",
+    "longDescription": "Leave behind the noise and light pollution of the city and step into a world of stars. This nighttime desert trek leads you to one of the best stargazing spots, where the sky unfolds in all its cosmic beauty. Guided by experts equipped with headlamps and binoculars, you'll learn about constellations, planets, and cosmic stories. A peaceful and awe-inspiring experience for adventure seekers and dreamers alike.",
     "adventureCost": 60,
     "bookingAvailability": true,
     "location": "Morocco",
     "duration": "4 hours",
     "adventureLevel": "Moderate",
-    "includedItems": [
-      "Headlamp",
-      "Binoculars",
-      "Guide"
-    ],
-    "ecoFriendlyFeatures": [
-      "No artificial lighting",
-      "Leave no trace policy"
-    ],
+    "includedItems": ["Headlamp", "Binoculars", "Guide"],
+    "ecoFriendlyFeatures": ["No artificial lighting", "Leave no trace policy"],
     "maxGroupSize": 12,
-    "specialInstructions": [
-      "Dress warmly",
-      "Carry your own water"
-    ]
+    "specialInstructions": ["Dress warmly", "Carry your own water"]
   },
   {
     "id": 4,
     "adventureTitle": "Alpine Meadow Hike",
     "image": "https://i.ibb.co.com/ycjFGbrz/pexels-photo-31293423.webp",
     "categoryName": "Mountain Adventure",
-    "shortDescription": "Hike through alpine meadows with panoramic views and wildflowers.",
+    "longDescription": "Traverse stunning alpine landscapes filled with wildflowers, rocky trails, and panoramic vistas. This challenging hike takes you through pristine meadows in the heart of the Swiss Alps, offering both solitude and natural splendor. With eco-conscious practices such as reusable gear and wildflower preservation, it’s perfect for seasoned hikers looking to connect with nature while treading lightly on the environment.",
     "adventureCost": 45,
     "bookingAvailability": false,
     "location": "Switzerland",
     "duration": "5 hours",
     "adventureLevel": "Challenging",
-    "includedItems": [
-      "Hiking Poles",
-      "Trail Snacks",
-      "Map"
-    ],
-    "ecoFriendlyFeatures": [
-      "No plastic waste",
-      "Wildflower protection",
-      "Reusable containers"
-    ],
+    "includedItems": ["Hiking Poles", "Trail Snacks", "Map"],
+    "ecoFriendlyFeatures": ["No plastic waste", "Wildflower protection", "Reusable containers"],
     "maxGroupSize": 6,
-    "specialInstructions": [
-      "Wear hiking boots",
-      "Pack layers for weather changes"
-    ]
+    "specialInstructions": ["Wear hiking boots", "Pack layers for weather changes"]
   },
   {
     "id": 5,
     "adventureTitle": "Coral Reef Snorkeling",
     "image": "https://i.ibb.co.com/GfL1Q4Pz/pexels-photo-10769610.jpg",
     "categoryName": "Ocean Adventure",
-    "shortDescription": "Discover vibrant marine life while snorkeling responsibly.",
+    "longDescription": "Dive into an underwater paradise on a guided snorkeling tour led by marine biologists. Swim among vibrant coral reefs teeming with tropical fish, sea turtles, and colorful marine plants — all while learning about the importance of reef conservation. All gear is provided, including reef-safe sunscreen and wetsuits, ensuring a safe and sustainable adventure for both you and the reef ecosystem.",
     "adventureCost": 80,
     "bookingAvailability": true,
     "location": "Great Barrier Reef, Australia",
     "duration": "3.5 hours",
     "adventureLevel": "Easy",
-    "includedItems": [
-      "Snorkel Gear",
-      "Wetsuit",
-      "Reef-Safe Sunscreen"
-    ],
-    "ecoFriendlyFeatures": [
-      "Marine biologist-led",
-      "Eco boat",
-      "No coral touching"
-    ],
+    "includedItems": ["Snorkel Gear", "Wetsuit", "Reef-Safe Sunscreen"],
+    "ecoFriendlyFeatures": ["Marine biologist-led", "Eco boat", "No coral touching"],
     "maxGroupSize": 15,
-    "specialInstructions": [
-      "No fins if inexperienced",
-      "Avoid wearing lotion before trip"
-    ]
+    "specialInstructions": ["No fins if inexperienced", "Avoid wearing lotion before trip"]
   },
   {
     "id": 6,
     "adventureTitle": "Volcano Bike Descent",
     "image": "https://i.ibb.co.com/qFg6NKjB/pexels-photo-8507313.jpg",
     "categoryName": "Thrill Adventure",
-    "shortDescription": "Cycle down an extinct volcano with breathtaking views.",
+    "longDescription": "Strap on your helmet and prepare for an adrenaline-pumping ride as you descend the slopes of an extinct volcano. This guided biking adventure offers jaw-dropping views of lava fields, lush valleys, and coastal scenery. With safety gear, eco-friendly trails, and sustainably packed lunches, this experience combines physical thrill with environmental mindfulness. Perfect for thrill-seekers ready to feel the rush of gravity in paradise.",
     "adventureCost": 90,
     "bookingAvailability": true,
     "location": "Hawaii, USA",
     "duration": "6 hours",
     "adventureLevel": "Challenging",
-    "includedItems": [
-      "Bike",
-      "Helmet",
-      "Gloves"
-    ],
-    "ecoFriendlyFeatures": [
-      "Non-motorized travel",
-      "Eco-safe trails",
-      "Sustainable lunch packaging"
-    ],
+    "includedItems": ["Bike", "Helmet", "Gloves"],
+    "ecoFriendlyFeatures": ["Non-motorized travel", "Eco-safe trails", "Sustainable lunch packaging"],
     "maxGroupSize": 10,
-    "specialInstructions": [
-      "Bring sun protection",
-      "Basic biking skills required"
-    ]
+    "specialInstructions": ["Bring sun protection", "Basic biking skills required"]
   }
 ]
