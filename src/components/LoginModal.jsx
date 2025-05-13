@@ -14,10 +14,8 @@ const LoginModal = () => {
         setError("")
         signInWithGoogle()
             .then(res => {
-                console.log(res.user);
                 toast.success('successfully login')
             }).catch(error => {
-                console.log(error.message);
                 setError(error.message)
             })
     };
@@ -32,11 +30,9 @@ const LoginModal = () => {
 
         signInWithPassword(email, password)
             .then(res => {
-                console.log(res.user);
                 toast.success('Successfully Login');
                 e.target.reset();
             }).catch(error => {
-                console.log(error.message);
                 setError(error.message)
             })
 
@@ -61,11 +57,9 @@ const LoginModal = () => {
 
         createUser(email, password)
             .then(res => {
-                console.log(res.user);
                 toast.success('(_successfully Create Account');
                 e.target.reset();
             }).catch(error => {
-                console.log(error.message);
                 setError(error.message)
             })
     }

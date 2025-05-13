@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 
 const Card = ({ item }) => {
-    const { adventureTitle, image, ecoFriendlyFeatures } = item;
+    const { adventureTitle, image, ecoFriendlyFeatures, id } = item;
     return (
         <div className="card bg-base-100 w-full shadow-sm">
             <figure>
@@ -16,7 +17,7 @@ const Card = ({ item }) => {
                     }
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn bg-[#2A4759] text-white rounded-lg">Explore Now</button>
+                    <NavLink to={`/details/${id}`} className="btn bg-[#2A4759] text-white rounded-lg">Explore Now</NavLink>
                 </div>
             </div>
         </div>
