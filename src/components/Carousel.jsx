@@ -14,7 +14,7 @@ const Carousel = ({ children: slideImg }) => {
 
         <div className="overflow-hidden relative w-full lg:h-[450px]">
             <div className="absolute top-0 left-0 right-0 z-30">
-                <Navbar />
+                <Navbar textColor={'text-white'} />
             </div>
             <div
                 className="flex w-full h-full transition-transform ease-out duration-500"

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Auth/AuthProvider";
 import toast from "react-hot-toast";
@@ -7,15 +7,18 @@ import Navbar from "./Navbar";
 
 const LoginModal = () => {
     const { signInWithGoogle, createUser, signInWithPassword } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const [active, setActive] = useState(true);
-    const [error, setError] = useState("")
+    const [error, setError] = useState("");
 
     {/* --------------SignIn With Google-------------- */ }
     const handleGoogleLogin = () => {
         setError("")
         signInWithGoogle()
             .then(res => {
-                toast.success('successfully login')
+                toast.success('successfully login');
+                navigate(location.state.from);
             }).catch(error => {
                 setError(error.message)
             })
