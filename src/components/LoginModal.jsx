@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Auth/AuthProvider";
@@ -8,7 +8,12 @@ const LoginModal = () => {
     const { signInWithGoogle, createUser, signInWithPassword } = useContext(AuthContext);
     const [active, setActive] = useState(true);
     const [error, setError] = useState("")
-    
+    useEffect(()=> {
+        const modal = document.getElementById('my_modal_2')
+        if(modal){
+            modal.showModal();
+        }
+    }, [])
     {/* --------------SignIn With Google-------------- */ }
     const handleGoogleLogin = () => {
         setError("")
