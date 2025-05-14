@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import UpdateProfile from "../components/UpdateProfile";
 import Details from "../components/details";
 import PrivateRoute from "../Private/PrivateRoute";
+import LoginModal from "../components/LoginModal";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
                 loader: () => fetch('../travel.json')
             }
         ]
+    },
+    {
+        path: '/loginModal',
+        element: <LoginModal/>
     }
 ]);
 

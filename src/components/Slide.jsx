@@ -13,9 +13,20 @@ const Slide = () => {
         <div>
             <Carousel>
                 {
-                    slideImg.map((item, index) => <img key={index} src={item} />)
+                    slideImg.map((item, index) => (
+                        <div key={index} className="w-full flex-shrink-0 h-full">
+                            <img
+                                src={item}
+                                className="h-full w-full object-cover"
+                                alt={`Slide ${index + 1}`}
+                            />
+                        </div>
+                    ))
                 }
             </Carousel>
+
+
+
         </div>
     );
 };

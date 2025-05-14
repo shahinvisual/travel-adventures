@@ -1,14 +1,19 @@
 import { useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
-import LoginModal from "../components/LoginModal";
+import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     if (loading) {
-        <span className="loading loading-bars loading-xl"></span>
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <span className="loading loading-bars loading-xl"></span>
+            </div>
+        );
     }
+
     if (!user) {
-        return <LoginModal />;
+        return <Navigate to='/loginModal'></Navigate>
     }
     return children;
 };
