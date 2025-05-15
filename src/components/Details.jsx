@@ -50,27 +50,27 @@ const Details = () => {
                     <div>
                         <h1 className='flex gap-1 items-center text-lg font-semibold'><GiPalmTree />ecoFriendlyFeatures</h1>
                         {
-                            ecoFriendlyFeatures.map((item, idx) => <>
-                                <li key={idx}>{item}</li>
-                            </>)
+                            ecoFriendlyFeatures.map((item, idx) => <div  key={idx}>
+                                <li>{item}</li>
+                            </div>)
                         }
                     </div>
                     <div className='border-b-2'></div>
                     <div>
                         <h1 className='flex gap-1 items-center text-lg font-semibold'><LiaToolsSolid />includedItems</h1>
                         {
-                            includedItems.map((item, idx) => <>
-                                <li key={idx}>{item}</li>
-                            </>)
+                            includedItems.map((item, idx) => <div  key={idx}>
+                                <li>{item}</li>
+                            </div>)
                         }
                     </div>
                     <div className='border-b-2'></div>
                     <div>
                         <h1 className='flex gap-1 items-center text-lg font-semibold'><AiOutlinePropertySafety />specialInstructions</h1>
                         {
-                            specialInstructions.map((item, idx) => <>
-                                <li key={idx}>{item}</li>
-                            </>)
+                            specialInstructions.map((item, idx) => <div  key={idx}>
+                                <li>{item}</li>
+                            </div>)
                         }
                     </div>
                     <div className="card-actions justify-end">

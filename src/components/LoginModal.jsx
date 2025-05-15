@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Auth/AuthProvider";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Navbar from "./Navbar";
 
 const LoginModal = () => {
@@ -18,9 +18,10 @@ const LoginModal = () => {
         signInWithGoogle()
             .then(res => {
                 toast.success('successfully login');
-                navigate(location.state.from);
+                navigate(location.state?.from || '/');
             }).catch(error => {
                 setError(error.message)
+                console.log(error.message)
             })
     };
 
@@ -68,7 +69,9 @@ const LoginModal = () => {
             })
     }
     return (
-        <> <Navbar textColor="text-[#000000]"/>
+        <>
+        <Toaster/>
+         <Navbar textColor="text-[#000000]"/>
             <div className="hero bg-base-200 p-12">
                 <div className="card bg-base-100 w-full max-w-sm shrink-0">
                     <div className="card-body">

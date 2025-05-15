@@ -8,14 +8,14 @@ const PrivateRoute = ({ children }) => {
     console.log(location);
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center items-center mt-12">
                 <span className="loading loading-bars loading-xl"></span>
             </div>
         );
     }
 
     if (!user) {
-        return <Navigate state={{from:location.pathname}} to='/loginModal'></Navigate>
+        return <Navigate state={{ from: location.pathname }} to='/loginModal'></Navigate>
     }
     return children;
 };
