@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Navbar from "./Navbar";
 
 const LoginModal = () => {
-    const { signInWithGoogle, createUser, signInWithPassword } = useContext(AuthContext);
+    const { signInWithGoogle, createUser, signInWithPassword, updateUserProfile } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [active, setActive] = useState(true);
@@ -36,6 +36,7 @@ const LoginModal = () => {
         signInWithPassword(email, password)
             .then(res => {
                 toast.success('Successfully Login');
+                navigate(location.state?.from || '/')
                 e.target.reset();
             }).catch(error => {
                 setError(error.message)
@@ -62,16 +63,26 @@ const LoginModal = () => {
 
         createUser(email, password)
             .then(res => {
+                updateUserProfile(name, photo)
+                    .then(res => {
+                        toast.success('Successfully Updated Profile')
+                    }).catch(error => {
+                        setError(error.message)
+                    })
+            })
+            .then(res => {
                 toast.success('(_successfully Create Account');
+                navigate(location.state?.from || '/')
                 e.target.reset();
             }).catch(error => {
                 setError(error.message)
+                console.log(error.message);
             })
-    }
+    };
     return (
         <>
-        <Toaster/>
-         <Navbar textColor="text-[#000000]"/>
+            <Toaster />
+            <Navbar textColor="text-[#000000]" />
             <div className="hero bg-base-200 p-12">
                 <div className="card bg-base-100 w-full max-w-sm shrink-0">
                     <div className="card-body">

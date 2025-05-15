@@ -5,6 +5,7 @@ import { AuthContext } from "../Auth/AuthProvider";
 
 const Navbar = ({ textColor }) => {
     const { user, signOutUser } = useContext(AuthContext)
+    console.log(user?.displayName);
     const handleSignOut = () => {
         signOutUser();
     }
@@ -35,7 +36,10 @@ const Navbar = ({ textColor }) => {
             <div className="navbar-end">
                 {
                     user ? <>
-                        <NavLink onClick={handleSignOut} className="btn">Log out</NavLink>
+                        <div className="flex items-center gap-2">
+                            <img title="mitchel sentnar" className="h-[40px] w-[40px] rounded-full object-cover" src={user?.photoURL} alt="" />
+                            <NavLink onClick={handleSignOut} className="btn">Log out</NavLink>
+                        </div>
                     </>
                         :
                         <>
